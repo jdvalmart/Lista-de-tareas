@@ -1,0 +1,25 @@
+.TodoItem  {
+   display: flex;
+   justify-content: space-around;
+   margin: 10px;
+   padding: auto;
+   width: calc(100% - 10px);
+   font-size: 24px;
+   background-color: bisque;
+   list-style: none;
+   border-radius: 20px;
+}
+
+.TodoItem-p{
+    margin: 10px ;
+    padding: auto;
+    width: calc(100% - 120px);
+    font-size: 24px;
+}
+
+.TodoItem-p--complete{
+    text-decoration: line-through; 
+}
+
+
+

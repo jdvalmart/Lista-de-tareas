@@ -1,0 +1,17 @@
+
+
+.TodoSearch {
+    display: flex;
+    background-color: rgb(245, 236, 224);
+    border: 1px solid rgb(211, 211, 231);
+    border-radius: 20px; 
+    margin: 0 24px;
+    height: 64px;
+    width: calc(100% - 62px);
+    font-size: 24px;
+    font-weight: 400;
+    padding: auto;
+    text-align: center;
+   
+}
+

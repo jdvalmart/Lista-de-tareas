@@ -1,0 +1,17 @@
+
+
+h2 {
+    display: block;
+    text-align: center;
+    padding:20px;
+    font-size: 25px;
+    background-color: burlywood;
+    border-radius: 50px;
+}
+
+.titulo {
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+}
+  
