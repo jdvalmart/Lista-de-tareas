@@ -46,3 +46,14 @@ function useLocalStorage (itemName, initialValue){
   }
 
   export {useLocalStorage}
+
+  // const defaultTodos = [
+//  {text:'visitar a O Rey Pele', completed:true},
+//  {text:'visitar a Cristiano Ronaldo', completed:false},
+//  {text:'visitar a Leonel Messi', completed:true},
+//  {text:'visitar a Radamel Falcao', completed:false},
+//  ]
+
+//  localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
+
+// localStorage.removeItem('TODOS_V1')
