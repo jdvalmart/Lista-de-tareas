@@ -1,9 +1,11 @@
 import React from 'react'
+import { TodoContext } from '../TodoContext'
 import './TodoSearch.css'
-import { TodoItem } from '../TodoItem'
-import { FcTodoList } from 'react-icons/fc'
 
-function TodoSearch({searchValue,setSearchValue, totalTodos}){
+
+function TodoSearch(){
+
+    const {searchValue,setSearchValue} = React.useContext(TodoContext)
 
         return(
             <input 

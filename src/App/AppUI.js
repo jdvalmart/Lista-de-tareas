@@ -7,22 +7,23 @@ import {TodosError} from '../TodosError';
 import {TodosEmpty} from '../TodosEmpty';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoContext } from '../TodoContext';
+import React from 'react';
 
 
 
 function AppUI() {
+
+    const {loading,
+      error,
+      searchTodos,
+      completeTodo,
+      deleteTodo
+    } = React.useContext(TodoContext)
     return (
         < >
           <TodoCounter />
           <TodoSearch />
-          <TodoContext.Consumer>
-            {({loading,
-               error,
-               searchTodos,
-               completeTodo,
-               deleteTodo
-            })=>(
-              <TodoList>
+          <TodoList>
                 {loading && < TodosLoading/>}
                 {error && < TodosError/> }
                 {(!loading && searchTodos.length === 0) && <TodosEmpty/> }
@@ -36,9 +37,7 @@ function AppUI() {
                 onDelete = {() => deleteTodo(todo.text)}
                 />
                 ))}
-             </TodoList>
-            )}
-          </TodoContext.Consumer>
+          </TodoList>
           <CreateTodoButton/>
         </>
       );
