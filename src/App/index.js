@@ -1,10 +1,8 @@
 import React from 'react'
+import { AppUI } from './AppUI';
 import { useLocalStorage } from './useLocalStorage';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
+
+
 
 // const defaultTodos = [
 //  {text:'visitar a O Rey Pele', completed:true},
@@ -20,7 +18,12 @@ import { CreateTodoButton } from '../CreateTodoButton';
 
 function App() {
 
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading, 
+    error
+  } = useLocalStorage('TODOS_V1', [])
 
   const [searchValue, setSearchValue] = React.useState('')
  
@@ -52,28 +55,23 @@ function App() {
     newTodos.splice(todoIndex, 1)                        
     saveTodos(newTodos)
   }
- 
+  
   return (
-    < >
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <TodoList>
-         {searchTodos.map(todo => (
-          <TodoItem 
-          text={todo.text} 
-          key={todo.text}
-          completed={todo.completed}
-          onComplete = {() => completeTodo(todo.text)}
-          onDelete = {() => deleteTodo(todo.text)}
-          />
-         ))}
-      </TodoList>
-      <CreateTodoButton/>
-    </>
-  );
+    <AppUI
+      loading={loading}
+      error={error}
+      completedTodos ={completedTodos}
+      totalTodos = {totalTodos}
+      searchValue = {searchValue}
+      searchTodos = {searchTodos}
+      completeTodo = {completeTodo}
+      setSearchValue = {setSearchValue}
+      deleteTodo = {deleteTodo}
+  
+    
+    />
+  )
+ 
 }
 
 
