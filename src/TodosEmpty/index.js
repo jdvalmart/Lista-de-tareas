@@ -15,7 +15,7 @@ function TodosEmpty(){
                 </div>
             </div>
             <div className='parrafo'>
-                <p>Crea tu primera tarea</p>
+                <p>Empecemos de nuevo</p>
             </div>
         </>
         

@@ -10,7 +10,7 @@ function TodoSearch(){
         return(
             <input 
              className="TodoSearch" 
-             placeholder= 'busca en tu lista'
+             placeholder= 'Busca en tu lista, ejemplo "Hacer ejercicio"'
              value={searchValue}
              onChange={(event)=>{
                 setSearchValue(event.target.value)
